@@ -1,4 +1,8 @@
 package com.example.ejercicio2.repository;
 
-public interface IProfesorRepository {
+import com.example.ejercicio2.repository.entity.Estudiante;
+import com.example.ejercicio2.repository.entity.Profesor;
+import org.springframework.data.repository.CrudRepository;
+
+public interface IProfesorRepository extends CrudRepository<Profesor,Integer> {
 }
