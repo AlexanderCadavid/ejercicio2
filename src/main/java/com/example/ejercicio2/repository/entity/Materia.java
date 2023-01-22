@@ -5,9 +5,9 @@ import javax.persistence.*;
 @Entity
 public class Materia {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @Column(name = "id", nullable = false)
     private String id;
+    @Column(name = "id", nullable = false)
+
 
     public String getId() {
         return id;

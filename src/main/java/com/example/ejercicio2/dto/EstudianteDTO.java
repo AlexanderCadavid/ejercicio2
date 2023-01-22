@@ -1,21 +1,19 @@
 package com.example.ejercicio2.dto;
 
+import com.example.ejercicio2.repository.entity.Estudiante;
+
+
 public class EstudianteDTO {
 
     private String nombres;
     private String apellidos;
     private int fechaNacimiento;
-    private int ced;
-    private int edad;
+    private Integer id;
+    private Integer edad;
     private String materia;
 
-    public EstudianteDTO(String nombres, String apellidos, int fechaNacimiento, int ced,int edad, String materia){
-        this.nombres = nombres;
-        this.apellidos = apellidos;
-        this.fechaNacimiento = fechaNacimiento;
-        this.ced = ced;
-        this.edad = edad;
-        this.materia = materia;
+    public EstudianteDTO(){
+
     }
 
     public String getNombres() {
@@ -43,11 +41,11 @@ public class EstudianteDTO {
     }
 
     public int getCed() {
-        return ced;
+        return id;
     }
 
     public void setCed(int ced) {
-        this.ced = ced;
+        this.id = ced;
     }
 
     public int getEdad() {
@@ -64,6 +62,16 @@ public class EstudianteDTO {
 
     public void setMateria(String materia) {
         this.materia = materia;
+    }
+
+    public EstudianteDTO(Estudiante estudiante){
+
+        this.nombres = estudiante.getNombres();
+        this.apellidos = estudiante.getApellidos();
+        this.fechaNacimiento = estudiante.getFechaNacimiento();
+        this.id = estudiante.getCed();
+        this.edad = estudiante.getEdad();
+
     }
 }
 

@@ -1,31 +1,23 @@
 package com.example.ejercicio2.repository.entity;
 
+import com.example.ejercicio2.dto.EstudianteDTO;
+
 import javax.persistence.*;
 
 @Entity
 public class Estudiante {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @Column(name = "id", nullable = false)
-    private String id;
+    public Integer ced;
 
-    public Estudiante() {
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
     public String nombres;
     public String apellidos;
     public int fechaNacimiento;
-    public int ced;
     public int edad;
     public String materia;
+
+    public Estudiante() {
+    }
 
     public Estudiante(String nombres, String apellidos, int fechaNacimiento, int ced,int edad, String materia){
         this.nombres = nombres;
@@ -35,6 +27,7 @@ public class Estudiante {
         this.edad = edad;
         this.materia = materia;
     }
+
 
     public String getNombres() {
         return nombres;
@@ -82,6 +75,16 @@ public class Estudiante {
 
     public void setMateria(String materia) {
         this.materia = materia;
+    }
+
+    public Estudiante (EstudianteDTO estudianteDTO){
+
+        this.nombres = estudianteDTO.getNombres();
+        this.apellidos = estudianteDTO.getApellidos();
+        this.fechaNacimiento = estudianteDTO.getFechaNacimiento();
+        this.ced = estudianteDTO.getCed();
+
+
     }
 }
 
