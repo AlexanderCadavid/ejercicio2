@@ -9,4 +9,22 @@ public class MateriaDTO {
         this.horario = horario;
         this.tema = tema;
     }
+    public MateriaDTO(){
+
+    }
+    public int getHorario() {
+        return horario;
+    }
+
+    public void setHorario(int horario) {
+        this.horario = horario;
+    }
+
+    public String getTema() {
+        return tema;
+    }
+
+    public void setTema(String tema) {
+        this.tema = tema;
+    }
 }

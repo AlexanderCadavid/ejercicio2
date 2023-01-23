@@ -14,7 +14,7 @@ public interface IEstudianteService {
 
     String update(EstudianteDTO estudianteDTO);
 
-    boolean delete (String id);
+    boolean delete (Integer ced);
 
     Optional<Estudiante> findById(Integer ced);
 

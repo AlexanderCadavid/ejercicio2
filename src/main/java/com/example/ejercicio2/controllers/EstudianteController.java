@@ -28,7 +28,7 @@ public class EstudianteController {
 		}
 	}
 
-	@GetMapping("/{id}")
+	@GetMapping("/{ced}")
 	public ResponseEntity<?> findById(@PathVariable Integer ced) {
 		try {
 			return ResponseEntity.status(HttpStatus.OK).body(estudianteServiceImp.findById(ced));
@@ -52,7 +52,7 @@ public class EstudianteController {
 	@DeleteMapping
 	public ResponseEntity<?>
 	delete(@RequestBody EstudianteDTO estudianteDTO) {
-		return ResponseEntity.status(HttpStatus.NO_CONTENT).body(estudianteServiceImp.delete(String.valueOf(estudianteDTO.getCed())));
+		return ResponseEntity.status(HttpStatus.NO_CONTENT).body(estudianteServiceImp.delete(estudianteDTO.getCed()));
 	}
 }
 

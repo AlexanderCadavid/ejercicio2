@@ -9,37 +9,29 @@ import javax.persistence.*;
 public class Profesor {
 
     @Id
-    private Integer id;
+    private Integer cedula;
 
     private String nombres;
     private String apellidos;
     private Integer edad;
     private String materia;
-    private Integer cedula;
 
-    public Profesor(Integer id) {
-        this.id = id;
+
+    public Profesor(Integer cedula) {
+        this.cedula = cedula;
     }
 
     public Profesor() {
     }
 
-    public Profesor(String nombres, String apellidos, Integer edad, String materia, Integer id,Integer cedula){
+    public Profesor(String nombres, String apellidos, Integer edad, String materia,Integer cedula){
         this.nombres = nombres;
         this.apellidos = apellidos;
         this.edad = edad;
         this.materia = materia;
-        this.id = id;
         this.cedula = cedula;
     }
 
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
 
     public String getNombres() {
         return nombres;

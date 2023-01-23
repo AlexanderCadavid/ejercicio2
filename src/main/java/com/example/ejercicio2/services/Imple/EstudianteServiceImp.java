@@ -48,9 +48,9 @@ public class EstudianteServiceImp implements IEstudianteService{
     }
 
     @Override
-    public boolean delete(String id) {
-        if (repository.existsById(Integer.valueOf(id))) {
-            repository.deleteById(Integer.valueOf(id));
+    public boolean delete(Integer ced) {
+        if (repository.existsById(ced)){
+            repository.deleteById(ced);
             return true;
         } else {
             return false;
