@@ -8,7 +8,7 @@ public class EstudianteDTO {
     private String nombres;
     private String apellidos;
     private int fechaNacimiento;
-    private Integer id;
+    private Integer ced;
     private Integer edad;
     private String materia;
 
@@ -40,12 +40,12 @@ public class EstudianteDTO {
         this.fechaNacimiento = fechaNacimiento;
     }
 
-    public int getCed() {
-        return id;
+    public Integer getCed() {
+        return ced;
     }
 
     public void setCed(int ced) {
-        this.id = ced;
+        this.ced = ced;
     }
 
     public int getEdad() {
@@ -69,7 +69,7 @@ public class EstudianteDTO {
         this.nombres = estudiante.getNombres();
         this.apellidos = estudiante.getApellidos();
         this.fechaNacimiento = estudiante.getFechaNacimiento();
-        this.id = estudiante.getCed();
+        this.ced = estudiante.getCed();
         this.edad = estudiante.getEdad();
 
     }

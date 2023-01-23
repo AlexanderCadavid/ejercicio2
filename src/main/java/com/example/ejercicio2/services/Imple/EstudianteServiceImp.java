@@ -11,7 +11,8 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
-public class EstudianteServiceImp implements IEstudianteService {
+public class EstudianteServiceImp implements IEstudianteService{
+
     private IEstudianteRepository repository;
 
     public EstudianteServiceImp(IEstudianteRepository repository){
@@ -19,17 +20,9 @@ public class EstudianteServiceImp implements IEstudianteService {
     }
 
     @Override
-    public void save(Estudiante estudiante) {
-        if (!repository.existsById(estudiante.getCed())) {
-            repository.save(new Estudiante());
-        }
-    }
-
-
-    @Override
     public void save(EstudianteDTO estudianteDTO) {
-        if (!repository.existsById(estudianteDTO.getCed())) {
-            repository.save(new Estudiante());
+        if (!repository.existsById(Integer.valueOf(estudianteDTO.getCed()))) {
+            repository.save(new Estudiante(estudianteDTO));
         }
     }
 
@@ -42,14 +35,14 @@ public class EstudianteServiceImp implements IEstudianteService {
     }
 
     @Override
-    public void update(EstudianteDTO estudianteDTO) {
+    public String update(EstudianteDTO estudianteDTO) {
 
         Optional<Estudiante> value = repository.findById(estudianteDTO.getCed());
         if (value.isPresent()) {
             repository.save(new Estudiante(estudianteDTO));
-            return;
+            return "Actualizado";
         } else {
-            return;
+            return "No existe";
 
         }
     }

@@ -10,7 +10,7 @@ public interface IEstudianteService {
 
     List<EstudianteDTO> getAll();
 
-    void update(EstudianteDTO estudianteDTO);
+    String update(EstudianteDTO estudianteDTO);
 
     boolean delete (String id);
 
