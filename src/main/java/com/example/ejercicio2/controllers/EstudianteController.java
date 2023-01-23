@@ -7,6 +7,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.accessibility.AccessibleEditableText;
+import javax.persistence.Id;
+
 @RestController
 @RequestMapping("/Estudiante")
 public class EstudianteController {
@@ -25,6 +28,14 @@ public class EstudianteController {
 		}
 	}
 
+	@GetMapping("/{id}")
+	public ResponseEntity<?> findById(@PathVariable Integer ced) {
+		try {
+			return ResponseEntity.status(HttpStatus.OK).body(estudianteServiceImp.findById(ced));
+		} catch (Exception e) {
+			return ResponseEntity.status(HttpStatus.NOT_FOUND).body("{\"error\":\"Error. Intente mas tarde.\"}");
+		}
+	}
 	@PostMapping()
 	public ResponseEntity<?>
 	save(@RequestBody EstudianteDTO estudiante) {

@@ -8,13 +8,13 @@ import javax.persistence.*;
 public class Estudiante {
 
     @Id
-    public Integer ced;
+    private Integer ced;
 
-    public String nombres;
-    public String apellidos;
-    public int fechaNacimiento;
-    public int edad;
-    public String materia;
+    private String nombres;
+    private String apellidos;
+    private int fechaNacimiento;
+    private int edad;
+    private String materia;
 
     public Estudiante() {
     }

@@ -56,6 +56,12 @@ public class EstudianteServiceImp implements IEstudianteService{
             return false;
         }
     }
+
+    @Override
+    public Optional<Estudiante> findById(Integer ced) {
+        return repository.findById(ced);
+    }
+
 }
 
 

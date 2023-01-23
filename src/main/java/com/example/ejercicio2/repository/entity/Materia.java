@@ -5,8 +5,8 @@ import javax.persistence.*;
 @Entity
 public class Materia {
     @Id
-    private String id;
-    @Column(name = "id", nullable = false)
+    public String id;
+
 
 
     public String getId() {
